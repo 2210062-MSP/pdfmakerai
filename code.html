@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDFFlow - Advanced PDF Converter with AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .nav-link::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #3b82f6;
+            transition: width 0.3s;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="gradient-bg min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-xl font-bold text-gray-800">SmartPDF AI</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-link text-gray-600 hover:text-blue-500 transition">Home</a>
+                    <a href="#tools" class="nav-link text-gray-600 hover:text-blue-500 transition">Tools</a>
+                    <a href="#features" class="nav-link text-gray-600 hover:text-blue-500 transition">Features</a>
+                    <a href="#pricing" class="nav-link text-gray-600 hover:text-blue-500 transition">Pricing</a>
+                    <a href="#support" class="nav-link text-gray-600 hover:text-blue-500 transition">Support</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button class="text-gray-500 hover:text-gray-600 focus:outline-none" id="mobile-menu-button">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden bg-white" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" class="block px-3 py-2 text-gray-600 hover:text-blue-500">Home</a>
+                <a href="#about" class="block px-3 py-2 text-gray-600 hover:text-blue-500">About</a>
+                <a href="#services" class="block px-3 py-2 text-gray-600 hover:text-blue-500">Services</a>
+                <a href="#contact" class="block px-3 py-2 text-gray-600 hover:text-blue-500">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-800 leading-tight mb-6">All-in-One PDF Toolkit with AI</h1>
+                    <p class="text-lg text-gray-600 mb-8">Convert, edit, compress, and protect PDFs with our AI-powered tools. Perfect for businesses and individuals.</p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#upload" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition">Convert Now</a>
+                        <a href="#features" class="border border-gray-300 hover:bg-gray-50 text-gray-700 px-6 py-3 rounded-lg font-medium transition">See Features</a>
+                    </div>
+                </div>
+                <div>
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a41c9670-46d0-4ebf-afc1-5ec662f510d5.png" alt="SmartPDF AI tools interface showing various document conversion options" class="rounded-xl shadow-xl w-full h-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Why Choose Free Website Solutions</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Understand the benefits of building your website with no-cost platforms.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-8 rounded-xl card-hover">
+                    <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Zero Cost</h3>
+                    <p class="text-gray-600">No upfront investment required with free hosting platforms like GitHub Pages and Netlify.</p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-xl card-hover">
+                    <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">No Hosting Fees</h3>
+                    <p class="text-gray-600">Bypass monthly hosting costs with reliable free hosting options.</p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-xl card-hover">
+                    <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Fast Performance</h3>
+                    <p class="text-gray-600">Static websites load faster than traditional CMS-based sites.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16" id="tools">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Powerful PDF Tools</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">AI-enhanced tools for all your PDF needs</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-sm card-hover">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/298f198b-dd2b-4958-82fe-de8ae2d1ffc3.png" alt="PDF to Word conversion" class="w-full h-48 object-cover rounded-lg mb-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Smart Conversion</h3>
+                    <p class="text-gray-600 mb-6">Convert between PDF, Word, Excel, PPT while preserving layouts and formatting.</p>
+                    <a href="#upload" class="text-blue-500 font-medium inline-flex items-center">Try Converter 
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm card-hover">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/48b74c23-5a95-43b5-a82f-761ef998b2cd.png" alt="Netlify logo featuring a modern geometric design with blue shades" class="w-full h-48 object-cover rounded-lg mb-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">AI OCR</h3>
+                    <p class="text-gray-600 mb-6">Extract text from scans/images with AI-powered character recognition.</p>
+                    <a href="https://www.netlify.com" target="_blank" class="text-blue-500 font-medium inline-flex items-center">Explore Netlify 
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm card-hover">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/5a59c2f9-22c5-400f-b361-82b6d15b7cbf.png" alt="Vercel logo with modern typography and a hexagon icon representing speed and reliability" class="w-full h-48 object-cover rounded-lg mb-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Smart Editing</h3>
+                    <p class="text-gray-600 mb-6">Edit documents naturally using AI - no complicated tools needed.</p>
+                    <a href="https://vercel.com" target="_blank" class="text-blue-500 font-medium inline-flex items-center">Explore Vercel 
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Get In Touch</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Have questions about creating your free website? Contact us for guidance.</p>
+            </div>
+            <form class="grid grid-cols-1 gap-6 max-w-lg mx-auto">
+                <div>
+                    <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                    <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition">
+                </div>
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                    <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition">
+                </div>
+                <div>
+                    <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                    <textarea id="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"></textarea>
+                </div>
+                <button type="submit" class="mt-2 bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- AI Integration Section -->
+    <section id="ai" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">AI-Powered Document Intelligence</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Our AI technology enhances your documents with these advanced features</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-8 rounded-xl card-hover">
+                    <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Smart Formatting</h3>
+                    <p class="text-gray-600">AI automatically detects and preserves complex layouts, tables, and formatting.</p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-xl card-hover">
+                    <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">OCR Technology</h3>
+                    <p class="text-gray-600">Convert scanned PDFs and images into editable, searchable text.</p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-xl card-hover">
+                    <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Security Protection</h3>
+                    <p class="text-gray-600">AI-powered security ensures your documents remain private and are automatically deleted after processing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Website Cost Comparison</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">See how free hosting compares to paid alternatives.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-blue-100 relative">
+                    <div class="absolute top-0 right-0 bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">FREE</div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Static Website</h3>
+                    <div class="mb-6">
+                        <span class="text-4xl font-bold text-gray-800">$0</span>
+                        <span class="text-gray-600">/month</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center text-gray-600">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                            Free hosting on GitHub/Netlify
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                            Basic customization
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                            Fast loading speed
+                        </li>
+                    </ul>
+                    <a href="#contact" class="block w-full text-center bg-blue-50 hover:bg-blue-100 text-blue-600 px-6 py-3 rounded-lg font-medium transition">Get Started</a>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm relative">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Managed CMS</h3>
+                    <div class="mb-6">
+                        <span class="text-4xl font-bold text-gray-800">$15</span>
+                        <span class="text-gray-600">/month</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center text-gray-600">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                            WordPress/Wix/Squarespace
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                            Templates & plugins
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                            Built-in content management
+                        </li>
+                    </ul>
+                        <a href="#contact" class="block w-full text-center border border-gray-200 hover:border-blue-500 text-blue-500 px-6 py-3 rounded-lg font-medium transition">Learn More</a>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm relative">
+                    <div class="absolute top-0 right-0 bg-purple-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">PRO</div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Custom Development</h3>
+                    <div class="mb-6">
+                        <span class="text-4xl font-bold text-gray-800">$100+</span>
+                        <span class="text-gray-600">/month</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center text-gray-600">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                            Custom design & development
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                            Advanced functionality
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                            Ongoing maintenance
+                        </li>
+                    </ul>
+                    <a href="#contact" class="block w-full text-center bg-purple-500 hover:bg-purple-600 text-white px-6 py-3 rounded-lg font-medium transition">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Frequently Asked Questions</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Common questions about building free websites.</p>
+            </div>
+            <div class="space-y-6">
+                <div class="border-b border-gray-200 pb-6">
+                    <button class="flex justify-between items-center w-full text-left group" onclick="toggleFAQ('faq1')">
+                        <h3 class="text-lg font-medium text-gray-900 group-hover:text-blue-600">How much does it really cost to host on GitHub Pages?</h3>
+                        <svg id="faq1-icon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 transition-transform duration-200" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                    <div id="faq1" class="mt-2 hidden">
+                        <p class="text-gray-600">GitHub Pages is completely free for public repositories. You only need to pay if you want to keep your source code private (which doesn't affect the website hosting). There are no hosting fees, bandwidth limits, or other hidden costs for static websites.</p>
+                    </div>
+                </div>
+                <div class="border-b border-gray-200 pb-6">
+                    <button class="flex justify-between items-center w-full text-left group" onclick="toggleFAQ('faq2')">
+                        <h3 class="text-lg font-medium text-gray-900 group-hover:text-blue-600">What are the limitations of free hosting?</h3>
+                        <svg id="faq2-icon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 transition-transform duration-200" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                    <div id="faq2" class="mt-2 hidden">
+                        <p class="text-gray-600">Free hosting is ideal for static websites (HTML, CSS, JavaScript). Limitations include lack of server-side scripting (PHP, databases), no professional email hosting, and custom domain setup may require additional DNS configuration. For most personal portfolios and small business sites, these limitations don't pose problems.</p>
+                    </div>
+                </div>
+                <div class="border-b border-gray-200 pb-6">
+                    <button class="flex justify-between items-center w-full text-left group" onclick="toggleFAQ('faq3')">
+                        <h3 class="text-lg font-medium text-gray-900 group-hover:text-blue-600">Can I use a custom domain with free hosting?</h3>
+                        <svg id="faq3-icon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 transition-transform duration-200" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                    <div id="faq3" class="mt-2 hidden">
+                        <p class="text-gray-600">Yes! Most free hosting platforms allow custom domains. GitHub Pages and Netlify both support custom domains, though you'll need to purchase the domain separately (typically $10-15/year). They provide instructions for configuring DNS settings to point to your free hosted site.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-12">
+                <div>
+                    <h3 class="text-white text-lg font-medium mb-4">MySite</h3>
+                    <p class="mb-4">Creating professional websites with minimal cost using modern technologies and free hosting solutions.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-white text-lg font-medium mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="hover:text-white transition">Home</a></li>
+                        <li><a href="#about" class="hover:text-white transition">About</a></li>
+                        <li><a href="#services" class="hover:text-white transition">Services</a></li>
+                        <li><a href="#contact" class="hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white text-lg font-medium mb-4">Resources</h3>
+                    <ul class="space-y-2">
+                        <li><a href="https://pages.github.com" target="_blank" class="hover:text-white transition">GitHub Pages</a></li>
+                        <li><a href="https://www.netlify.com" target="_blank" class="hover:text-white transition">Netlify</a></li>
+                        <li><a href="https://vercel.com" target="_blank" class="hover:text-white transition">Vercel</a></li>
+                        <li><a href="https://developer.mozilla.org" target="_blank" class="hover:text-white transition">MDN Web Docs</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white text-lg font-medium mb-4">Newsletter</h3>
+                    <p class="mb-4">Subscribe to our newsletter for web development tips and updates.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 w-full bg-gray-800 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-r-lg transition">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-sm text-center">
+                <p>&copy; 2023 MySite. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // FAQ toggle functionality
+        function toggleFAQ(id) {
+            const element = document.getElementById(id);
+            const icon = document.getElementById(id + '-icon');
+            
+            element.classList.toggle('hidden');
+            
+            if (element.classList.contains('hidden')) {
+                icon.innerHTML = '<path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" />';
+            } else {
+                icon.innerHTML = '<path fill-rule="evenodd" d="M5 10a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1z" clip-rule="evenodd" />';
+            }
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+
+                // Close mobile menu if open
+                const menu = document.getElementById('mobile-menu');
+                if (!menu.classList.contains('hidden')) {
+                    menu.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
